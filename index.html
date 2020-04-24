@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<head>
+    <title>Mario Kart - 2020</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+<style>
+ body {
+     overflow: hidden;
+     padding:0;
+     margin:0;
+     height:700px;
+ }
+ .container {
+     border:2px solid red;
+     padding:0;
+     margin:0;
+ }
+ .sky {
+     background-color: lightblue;
+     height:35%;
+ }
+ .grass {
+     background-color: rgb(14, 95, 14);
+     height:25%;
+ }
+ .ground {
+background-color: black;
+height:45%;
+ }
+ .cloud1 {
+     width:200px;
+     height:100px;
+     position: absolute;
+     left:100px;
+     top:20px;
+     animation-name: bigcloud;
+     animation-duration: 20s;
+     animation-iteration-count: infinite;
+     animation-timing-function: linear;
+     z-index:2
+     
+ }
+ .cloud2 {
+     width:120px;
+     height:80px;
+     position: absolute;
+     top:30px;
+     animation-name: smallcloud;
+     animation-duration: 20s;
+     animation-iteration-count: infinite;
+     animation-timing-function: linear;
+
+ }
+ @keyframes bigcloud {
+     from{transform: translateX(1300px)}
+     to{transform: translateX(-600px)}
+ }
+ @keyframes smallcloud {
+     from{transform: translateX(1300px)}
+     to{transform: translateX(-400px)}
+ }
+ @keyframes drive{
+     0%{transform: translateX(-400px)}
+     50%{transform: translateX(500px)}
+     100%{transform: translateX(1500px)}
+    }
+    @keyframes tree1{
+     0%{transform: translateX(700px)}
+     100%{transform: translateX(-1200px)}
+    }
+    @keyframes tree2{
+     0%{transform: translateX(700px)}
+     100%{transform: translateX(-1200px)}
+    }
+ .line{
+     border:3px dashed white;
+     height:1px;
+     position: relative;
+     top:20%;
+ }
+ .mario {
+     width:100px;
+     height:100px;
+     position: relative;
+     animation: drive 20s ease-in-out infinite;
+ }
+ .tree1{
+     position: relative;
+     height: 100px;
+
+     left:700px;
+     top:60px;
+     animation: tree1 20s linear infinite;
+ }
+ .tree2{
+    position: relative;
+    height: 100px;
+    left:840px;
+    top:-20px;
+    animation: tree2 20s linear infinite;
+ }
+</style>
+</head>
+<body>
+    
+        <div class="sky">
+            <img class="cloud1" src="cloud1.png" alt="">
+            <img class="cloud2" src="cloud2.png" alt="">
+        </div>
+        <div class="grass">
+            <img class="tree1" src="tree.png" alt="">
+            <img class="tree2" src="tree.png" alt="">
+        </div>
+        <div class="ground">
+            <img class="mario" src="mariokart.png" alt="">
+
+            <div class="line">
+            </div>
+        </div>  
+    
+</body>

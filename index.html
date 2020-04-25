@@ -3,7 +3,6 @@
     <title>Mario Kart - 2020</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
@@ -12,7 +11,8 @@
      overflow: hidden;
      padding:0;
      margin:0;
-     height:700px;
+     height:656px;
+     min-width:100%;
  }
  .container {
      border:2px solid red;
@@ -29,7 +29,7 @@
  }
  .ground {
 background-color: black;
-height:45%;
+height:100%;
  }
  .cloud1 {
      width:200px;
@@ -80,7 +80,7 @@ height:45%;
      border:3px dashed white;
      height:1px;
      position: relative;
-     top:20%;
+     top:10%;
  }
  .mario {
      width:100px;
@@ -103,6 +103,60 @@ height:45%;
     top:-20px;
     animation: tree2 20s linear infinite;
  }
+ @keyframes bigcloudM {
+     from{transform: translateX(450px)}
+     to{transform: translateX(-300px)}
+ }
+ @keyframes smallcloudM {
+     from{transform: translateX(350px)}
+     to{transform: translateX(-300px)}
+ }
+ @keyframes tree1M{
+     0%{transform: translateX(450px)}
+     100%{transform: translateX(-200px)}
+    }
+    @keyframes tree2M{
+     0%{transform: translateX(350px)}
+     100%{transform: translateX(-250px)}
+    }
+    @keyframes driveM{
+     0%{transform: translateX(-150px)}
+     50%{transform: translateX(100px)}
+     100%{transform: translateX(420px)}
+    }
+ @media only screen and (max-width: 500px) { 
+     body {
+         overflow: hidden;
+     }
+	.cloud1 {
+        width: 150px;
+    animation: smallcloudM 10s linear infinite;
+    height: 80px;
+    }
+    .cloud2 {
+        width: 150px;
+    animation: bigcloudM 10s linear infinite;
+    height: 80px;
+    }
+    .tree1 {
+        position: relative;
+        left:0;
+        height: 125px;
+        top:36px;
+        animation: tree1M 10s linear infinite;
+    }
+    .tree2 {
+        position: relative;
+        left:0;
+        top:-70px;
+        animation: tree2M 10s linear infinite;
+    }
+    .mario {
+        animation: driveM 10s ease-in-out infinite;
+
+    }
+    
+}
 </style>
 </head>
 <body>
